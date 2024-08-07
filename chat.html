@@ -32,19 +32,6 @@
 
 		embedded_svc.settings.enabledFeatures = ['LiveAgent'];
 		embedded_svc.settings.entryFeature = 'LiveAgent';
-		embedded_svc.settings.language = "en-US";
-		embedded_svc.addEventHandler("afterMaximize", function () {
-			const domainType = document.querySelector("#Domain_Type__c")
-			if (!domainType) { return }
-			domainType.parentElement.style.display = 'none';
-			if (document.querySelector("#Type")) {
-				domainType.value = 'ChatQueueCanadaCase';
-			} else {
-				domainType.value = 'Chat_Queue_Canada';
-			}
-			domainType.dispatchEvent(new Event('change', { 'bubbles': !0 }));
-		})
-
 
 		embedded_svc.init(
 			'https://nsus.my.salesforce.com',
